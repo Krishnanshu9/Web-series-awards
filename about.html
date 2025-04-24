@@ -1,0 +1,79 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>About | Web Series Awards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+
+  <!-- Header -->
+  <header class="bg-gray-900 p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-yellow-400">Web Series Awards</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:text-yellow-400">Home</a>
+        <a href="nominees.html" class="hover:text-yellow-400">Nominees</a>
+        <a href="vote.html" class="hover:text-yellow-400">Vote</a>
+        <a href="login.html" class="hover:text-yellow-400">Login</a>
+        <a href="register.html" class="hover:text-yellow-400">Register</a>
+        <a href="about.html" class="text-yellow-400">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Status -->
+  <div class="max-w-6xl mx-auto px-4 mt-6 flex justify-between items-center">
+    <div id="loginStatus" class="text-sm text-gray-300"></div>
+    <button id="logoutButton" onclick="logout()" class="text-sm text-yellow-400 hover:underline hidden">Logout</button>
+  </div>
+
+  <!-- About Section -->
+  <section class="max-w-4xl mx-auto py-16 px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6 text-yellow-400">About the Awards</h2>
+    <p class="text-lg text-gray-300 mb-6">
+      The Web Series Awards 2025 celebrates the most captivating storytelling, powerful performances, and creative
+      brilliance in the world of web series.
+      This annual event honors creators across drama, comedy, action, and more, spotlighting the best in online
+      entertainment.
+    </p>
+    <p class="text-md text-gray-400 mb-4">
+      📅 <strong>Event Date:</strong> May 10, 2025
+      <br />
+      📍 <strong>Location:</strong> Virtual Premiere (Live Streamed Globally)
+    </p>
+    <a href="vote.html"
+      class="inline-block mt-6 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition">
+      Vote Now
+    </a>
+  </section>
+
+  <footer class="bg-gray-900 p-4 mt-12 text-center text-sm text-gray-400">
+    &copy; 2025 Web Series Awards. All rights reserved.
+  </footer>
+
+  <script>
+    const loginStatus = document.getElementById('loginStatus');
+    const logoutButton = document.getElementById('logoutButton');
+    const voter = localStorage.getItem('voterName');
+
+    if (voter) {
+      loginStatus.innerText = `Logged in as ${voter}`;
+      logoutButton.classList.remove('hidden');
+    } else {
+      loginStatus.innerText = 'Not registered — please register to vote.';
+    }
+
+    function logout() {
+      localStorage.removeItem('voterName');
+      loginStatus.innerText = 'Not registered — please register to vote.';
+      logoutButton.classList.add('hidden');
+      alert("You have successfully logged out.");
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
