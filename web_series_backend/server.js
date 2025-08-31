@@ -11,7 +11,7 @@ const PORT = 3000;
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root', 
-  password: 'ricky123', // Replace with your MySQL password
+  password: '', // Replace with your MySQL password
   database: 'web_series_awards'
 });
 
@@ -127,3 +127,4 @@ app.post('/vote', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
