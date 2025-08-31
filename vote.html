@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Vote | Web Series Awards</title>
+  <title>Vote | BINGE FEST Awards</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
-<body class="bg-black text-white">
+
+<body class="bg-black text-white min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="bg-gray-900 p-4 shadow-md">
+  <header class="bg-gray-900 p-4 shadow-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-yellow-400">Web Series Awards</h1>
+      <h1 class="text-2xl font-bold text-yellow-400">BINGE FEST Awards</h1>
       <nav class="space-x-4">
         <a href="index.html" class="hover:text-yellow-400">Home</a>
         <a href="nominees.html" class="hover:text-yellow-400">Nominees</a>
@@ -29,33 +33,270 @@
   </div>
 
   <!-- Voting Section -->
-  <section class="max-w-6xl mx-auto py-12">
-    <h2 class="text-3xl font-bold mb-8 text-center text-yellow-400">Vote for Your Favorite Web Series</h2>
+  <section class="max-w-6xl mx-auto py-12 px-4">
+    <div class="text-center mb-16 animate__animated animate__fadeIn">
+      <h2 class="text-4xl font-bold mb-4 text-yellow-400">Cast Your Votes</h2>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">Help decide the winners of the 2025 BINGE FEST Awards by voting
+        for your favorites in each category.</p>
+    </div>
 
-    <!-- Category -->
-    <div class="mb-12">
-      <h3 class="text-xl font-semibold mb-4">Best Drama Series</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Card Example -->
-        <div class="bg-gray-800 p-4 rounded-xl shadow-md">
-          <img src="https://via.placeholder.com/300x160" alt="poster" class="rounded mb-4">
-          <h4 class="text-lg font-semibold mb-2">Series Title 1</h4>
-          <p class="text-sm text-gray-400 mb-3">An unforgettable drama series.</p>
-          <button class="bg-yellow-400 text-black font-semibold px-4 py-2 rounded hover:bg-yellow-300"
-            onclick="vote('Series Title 1')">
-            Vote
+    <!-- Best Drama Series -->
+    <div class="mb-16 animate__animated animate__fadeInUp">
+      <div class="flex items-center mb-6">
+        <div class="h-1 w-16 bg-yellow-400 mr-4"></div>
+        <h3 class="text-2xl font-semibold">Best Drama Series</h3>
+        <div class="h-1 flex-grow bg-gray-700 ml-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/stranger things.jpg" alt="Stranger things" width="300" height="100">
+          <h4 class="text-xl font-semibold mb-2">Stranger Things</h4>
+          <p class="text-gray-400 mb-4">A group of kids uncover supernatural mysteries in their small town, battling
+            creatures from another dimension.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Stranger Things', 'Best Drama Series')">
+            Vote Now
           </button>
         </div>
 
-        <!-- Add more nominee cards here -->
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/bridgerton.jpg" alt="Bridgerton" width="300" height="100">
+          <h4 class="text-xl font-semibold mb-2">Bridgerton</h4>
+          <p class="text-gray-400 mb-4">A lavish period drama exploring romance, scandal, and high society in
+            Regency-era London.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Bridgerton', 'Best Drama Series')">
+            Vote Now
+          </button>
+        </div>
 
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/peaky blinders.jpg" alt="Peaky Blinders" width="300" height="100">
+          <h4 class="text-xl font-semibold mb-2">Peaky Blinders</h4>
+          <p class="text-gray-400 mb-4">A gritty crime saga following a ruthless gang's rise to power in post-WWI
+            Birmingham.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Peaky Blinders', 'Best Drama Series')">
+            Vote Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Comedy Series -->
+    <div class="mb-16 animate__animated animate__fadeInUp">
+      <div class="flex items-center mb-6">
+        <div class="h-1 w-16 bg-yellow-400 mr-4"></div>
+        <h3 class="text-2xl font-semibold">Best Comedy Series</h3>
+        <div class="h-1 flex-grow bg-gray-700 ml-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/friends.jpg" alt="Friends poster" width="300" height="100">
+          <h4 class="text-xl font-semibold mb-2">Friends</h4>
+          <p class="text-gray-400 mb-4">Six friends navigate life, love, and laughter in New York City.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Friends', 'Best Comedy Series')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/mr. queen.jpg" alt="mr queen poster" width="300" height="100">
+          <h4 class="text-xl font-semibold mb-2">Mr. Queen</h4>
+          <p class="text-gray-400 mb-4">A modern chef’s soul ends up in a Joseon-era queen’s body, leading to chaotic
+            royal antics.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Mr. Queen', 'Best Comedy Series')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/never have i ever.jpg" alt="never have i ever poster" width="300" height="100">
+          <h4 class="text-xl font-semibold mb-2">Never have i ever</h4>
+          <p class="text-gray-400 mb-4">A high schooler juggles grief, identity, and teenage drama with comedic twists.
+          </p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Never have i ever', 'Best Comedy Series')">
+            Vote Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Actor -->
+    <div class="mb-16 animate__animated animate__fadeInUp">
+      <div class="flex items-center mb-6">
+        <div class="h-1 w-16 bg-yellow-400 mr-4"></div>
+        <h3 class="text-2xl font-semibold">Best Actor</h3>
+        <div class="h-1 flex-grow bg-gray-700 ml-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/Jamie Campbell Bower.jpg" alt="James Wilder"
+            class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-yellow-400">
+          <h4 class="text-xl font-semibold mb-2 text-center">James Wilder</h4>
+          <p class="text-gray-400 mb-4 text-center">Stranger Things</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('James Wilder', 'Best Actor')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/Jonathan Bailey.jpg" alt="Marcus Chen"
+            class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-yellow-400">
+          <h4 class="text-xl font-semibold mb-2 text-center">Marcus Chen</h4>
+          <p class="text-gray-400 mb-4 text-center">Bridgerton</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Marcus Chen', 'Best Actor')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/Cilian Murphy.jpg" alt="David Langley"
+            class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-yellow-400">
+          <h4 class="text-xl font-semibold mb-2 text-center">David Langley</h4>
+          <p class="text-gray-400 mb-4 text-center">Peaky Blinders</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('David Langley', 'Best Actor')">
+            Vote Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Actress -->
+    <div class="mb-16 animate__animated animate__fadeInUp">
+      <div class="flex items-center mb-6">
+        <div class="h-1 w-16 bg-yellow-400 mr-4"></div>
+        <h3 class="text-2xl font-semibold">Best Actress</h3>
+        <div class="h-1 flex-grow bg-gray-700 ml-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/Viola Davis.jpg" alt="Viola Davis"
+            class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-yellow-400">
+          <h4 class="text-xl font-semibold mb-2 text-center">Viola Davis</h4>
+          <p class="text-gray-400 mb-4 text-center">How to get away from Murder</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Viola Davis', 'Best Actress')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/IU.jpg" alt="IU"
+            class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-yellow-400">
+          <h4 class="text-xl font-semibold mb-2 text-center">IU</h4>
+          <p class="text-gray-400 mb-4 text-center">When Life Gives You Tangerines</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('IU', 'Best Actress')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/Anya Chalotra.jpg" alt="Anya Chalotra"
+            class="rounded-full w-32 h-32 object-cover mx-auto mb-4 border-2 border-yellow-400">
+          <h4 class="text-xl font-semibold mb-2 text-center">Anya Chalotra</h4>
+          <p class="text-gray-400 mb-4 text-center">The Witcher</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Anya Chalotra', 'Best Actress')">
+            Vote Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Anime -->
+    <div class="animate__animated animate__fadeInUp">
+      <div class="flex items-center mb-6">
+        <div class="h-1 w-16 bg-yellow-400 mr-4"></div>
+        <h3 class="text-2xl font-semibold">Best Anime</h3>
+        <div class="h-1 flex-grow bg-gray-700 ml-4"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/Naruto.jpg" alt="Naruto" class="rounded-lg mb-4 w-full h-56 object-cover">
+          <h4 class="text-xl font-semibold mb-2">Naruto</h4>
+          <p class="text-gray-400 mb-4">Cyberpunk thriller set in a dystopian future.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Naruto', 'Best Anime')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/One piece.jpg" alt="One piece" class="rounded-lg mb-4 w-full h-56 object-cover">
+          <h4 class="text-xl font-semibold mb-2">One piece</h4>
+          <p class="text-gray-400 mb-4">Sci-fi survival drama on a distant space station.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('One piece', 'Best Anime')">
+            Vote Now
+          </button>
+        </div>
+
+        <div class="glass-card hover:bg-gray-700 transition duration-300 transform hover:-translate-y-1">
+          <img src="images/Attack on Titan.jpg" alt="Attack on Titan" class="rounded-lg mb-4 w-full h-56 object-cover">
+          <h4 class="text-xl font-semibold mb-2">Attack on Titan</h4>
+          <p class="text-gray-400 mb-4">Mystery series with dark twists and turns.</p>
+          <button
+            class="btn-glow bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition w-full"
+            onclick="vote('Attack on Titan', 'Best Anime')">
+            Vote Now
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-gray-900 p-4 mt-12 text-center text-sm text-gray-400">
-    &copy; 2025 Web Series Awards. All rights reserved.
+  <footer class="bg-gray-900 p-8 mt-auto text-center text-gray-400">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="#" class="text-gray-400 hover:text-yellow-400">
+          <span class="sr-only">Facebook</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-yellow-400">
+          <span class="sr-only">Twitter</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+            </path>
+          </svg>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-yellow-400">
+          <span class="sr-only">Instagram</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+      <p class="text-sm">&copy; 2025 BINGE FEST Awards. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
@@ -79,35 +320,83 @@
       window.location.href = 'index.html';
     }
 
-    async function vote(nomineeName) {
-  if (!voter) {
-    alert("Please register before voting.");
-    window.location.href = "register.html";
-    return;
-  }
+    async function vote(nomineeName, category) {
+      const voter = localStorage.getItem('voterName');
 
-  try {
-    const response = await fetch('http://localhost:3000/vote', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name: voter, nominee: nomineeName })
-    });
+      if (!voter) {
+        alert("Please login before voting.");
+        window.location.href = "login.html";
+        return;
+      }
 
-    const result = await response.json();
+      try {
+        const button = event.target;
+        button.disabled = true;
+        button.textContent = 'Voting...';
 
-    if (response.ok) {
-      alert(result.message); // ✅ Will show correct success message
-    } else {
-      alert(result.error || "Something went wrong."); // ✅ Handle error messages
+        const response = await fetch('http://localhost:3000/vote', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: voter,
+            nominee: nomineeName,
+            category: category
+          })
+        });
+
+        const result = await response.json();
+
+        button.disabled = false;
+        button.textContent = 'Vote Now';
+
+        if (response.ok) {
+          // Store in localStorage to prevent duplicate votes client-side
+          localStorage.setItem(`vote_${category}`, nomineeName);
+          alert(`✅ Thank you for voting for ${nomineeName} in ${category}!`);
+        } else {
+          alert(result.error || "Something went wrong.");
+        }
+      } catch (err) {
+        console.error('Voting failed:', err);
+        alert("Voting failed. Please try again later.");
+        event.target.disabled = false;
+        event.target.textContent = 'Vote Now';
+      }
     }
 
-  } catch (err) {
-    console.error('Voting failed:', err);
-    alert("Voting failed. Please try again later.");
-  }
-}
+    // Update the DOMContentLoaded event handler
+    document.addEventListener("DOMContentLoaded", function () {
+      const user = localStorage.getItem("voterName");
+      const loginStatus = document.getElementById("loginStatus");
+      const logoutButton = document.getElementById("logoutButton");
+
+      if (user) {
+        loginStatus.textContent = `Logged in as ${user}`;
+        logoutButton.classList.remove("hidden");
+      } else {
+        loginStatus.textContent = "Not registered — please register to vote.";
+      }
+    });
+
+    // Handle login status display
+    document.addEventListener("DOMContentLoaded", function () {
+      const user = localStorage.getItem("voterName");
+      const loginStatus = document.getElementById("loginStatus");
+      const logoutButton = document.getElementById("logoutButton");
+
+      if (user) {
+        loginStatus.textContent = `Logged in as ${user}`;
+        logoutButton.classList.remove("hidden");
+      } else {
+        loginStatus.textContent = "Not logged in.";
+      }
+    });
+
   </script>
 </body>
+
+</body>
+
 </html>

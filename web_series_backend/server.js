@@ -10,8 +10,8 @@ const PORT = 3000;
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root', // Or use process.env.DB_USER
-  password: 'ricky123', // Or use process.env.DB_PASS
+  user: 'root', 
+  password: 'ricky123', // Replace with your MySQL password
   database: 'web_series_awards'
 });
 
@@ -72,38 +72,58 @@ app.post('/login', (req, res) => {
 //  Vote
 
 app.post('/vote', (req, res) => {
-  const { name, nominee } = req.body;
+  const { name, nominee, category } = req.body;
 
   // Look up user ID from the name
   db.query('SELECT id FROM users WHERE name = ?', [name], (err, results) => {
-    if (err) return res.status(500).json({ error: 'Database error during user lookup' });
+    if (err) {
+      console.error('Database error during user lookup:', err);
+      return res.status(500).json({ error: 'Database error during user lookup' });
+    }
 
     if (results.length === 0) {
+      console.log(`User not found: ${name}`);
       return res.status(404).json({ error: 'User not found' });
     }
 
     const userId = results[0].id;
 
-    // Optional: prevent duplicate votes by user_id + nominee
-    db.query('SELECT * FROM votes WHERE user_id = ? AND nominee = ?', [userId, nominee], (err, existingVote) => {
-      if (err) return res.status(500).json({ error: 'Database error during vote check' });
+    // Prevent duplicate votes by user_id + category
+    db.query('SELECT * FROM votes WHERE user_id = ? AND category = ?',
+      [userId, category],
+      (err, existingVote) => {
+        if (err) {
+          console.error('Database error during vote check:', err);
+          return res.status(500).json({ error: 'Database error during vote check' });
+        }
 
-      if (existingVote.length > 0) {
-        return res.status(400).json({ error: 'You have already voted for this nominee' });
+        if (existingVote.length > 0) {
+          console.log(`Duplicate vote attempt: User ${userId} in ${category}`);
+          return res.status(400).json({
+            error: 'You have already voted in this category',
+            category: category
+          });
+        }
+
+        const insertQuery = 'INSERT INTO votes (user_id, nominee, category) VALUES (?, ?, ?)';
+        db.query(insertQuery, [userId, nominee, category], (err, result) => {
+          if (err) {
+            console.error('Error recording vote:', err);
+            return res.status(500).json({ error: 'Error recording vote' });
+          }
+          console.log(`Vote recorded: User ${userId} for ${nominee} in ${category}`);
+          res.json({
+            message: `Vote recorded for ${nominee} in ${category}`,
+            voteId: result.insertId
+          });
+        });
       }
-
-      const insertQuery = 'INSERT INTO votes (user_id, nominee) VALUES (?, ?)';
-      db.query(insertQuery, [userId, nominee], (err, result) => {
-        if (err) return res.status(500).json({ error: 'Error recording vote' });
-        res.json({ message: `Vote recorded for ${nominee}` });
-      });
-    });
+    );
   });
 });
 
 
 //Start Server
-
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
